@@ -43,7 +43,7 @@ class Manager(BaseUserManager):
             if ratio > 0.66:
                 raise ValueError("UsernameSimilarity")
         
-        user = self.model(username=username, **extra_fields)
+        user = self.model(username=username, email=email, **extra_fields)
         user.set_password(password)
         user.save()
         return user

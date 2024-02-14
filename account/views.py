@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import logout as logout_user
 from django.contrib.auth import login as login_user
 from django.contrib import messages
 from .backends import Backend
@@ -13,7 +14,6 @@ def register(request):
             password = request.POST.get("password")
             password2 = request.POST.get("password2")
             
-            print(username, email, password, password2)
 
             if username == "" and username is not None:
                 messages.error(request, 'Имя пользователя не указано.')
@@ -31,10 +31,7 @@ def register(request):
                 messages.error(request, 'Пароли не совпадают.')
                 return redirect('register')
 
-            user = User.objects.create(username=username, email=email, password=password)
-            user.username = username
-            user.email = email
-            user.password = password
+            user = User.objects.create_user(username=username, email=email, password=password)
             user.save()
             login_user(request, user, 'account.backends.Backend')
 
@@ -62,6 +59,10 @@ def login(request):
         return render(request, 'account/login.html')
     
     return redirect('home')
+
+def logout(request):
+    logout_user(request)
+    return redirect('login')
 
 def profile(request):
     if request.method == "GET":
