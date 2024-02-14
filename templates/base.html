@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <div>
+                <h2 style="text-align: center">Classroom</h2>
+            </div>
+            <div class="navbar">
+                <a href="#">Главная</a>
+                <a href="#">Войти</a>
+                <a href="#">Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="container">
+            {% block content %} {% endblock content %}
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+
+        </div>
+    </div>
+</body>
+
+</html>
