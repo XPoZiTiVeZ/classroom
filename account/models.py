@@ -28,14 +28,17 @@ class User(AbstractBaseUser):
     first_name = models.CharField(
         verbose_name="Имя",
         max_length=32,
+        blank=True,
     )
     middle_name = models.CharField(
         verbose_name="Отчество",
         max_length=32,
+        blank=True,
     )
     last_name = models.CharField(
         verbose_name="Фамилия",
         max_length=32,
+        blank=True,
     )
     
     is_admin = models.BooleanField(default=False)

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import register, login, profile, set_password
+from account.views import register, login, profile, set_password
 
 urlpatterns = [
     path("", profile, name="profile"),

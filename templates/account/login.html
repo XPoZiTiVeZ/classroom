@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    form {
+        height: 250px;
+        margin: 25px 0;
+    }
+
+    input {
+        box-sizing: border-box;
+        display: block;
+        width: 90%;
+        height: 40px;
+        margin: 40px auto 0;
+        border-radius: 20px;
+        color: #212121;
+        text-align: center;
+    }
+
+    button {
+        display: block;
+        background-color: #00FFF5;
+        width: 200px;
+        height: 40px;
+        margin: 50px auto 0;
+        border-radius: 20px;
+        color: #212121;
+    }
+
+    .content {
+        background-color: #212121;
+        width: 300px;
+        height: 300px;
+        padding: 30px;
+        margin: 50px auto;
+        border-radius: 10px;
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="content">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input name="username" type="text" placeholder="Имя пользователя или почта">
+        <input name="password" type="password" placeholder="Пароль">
+        <button type="submit">Войти</button>
+    </form>
+</div>
+{% endblock content %}
