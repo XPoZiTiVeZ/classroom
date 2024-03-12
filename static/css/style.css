@@ -3,49 +3,108 @@
     src: url("../fonts/DejaVuSansCondensed.ttf");
 }
 
+:root {
+    --basic-color: #FFF;
+    --special-color: #00FFF5;
+    --not-special-color: #0D7377;
+    --primary-bg-color: #323232;
+    --secondery-bg-color: #212121;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
     font-family: DeJaVuSansCondensed;
-    color: white;
+    color: var(--basic-color);
 }
 
 a {
-    color: #00FFF5;
+    color: var(--special-color);
     text-decoration: none;
 }
 
 #header {
-    background-color: #212121;
+    background-color: var(--secondery-bg-color);
     height: 100px;
+    border-bottom: 1px solid var(--not-special-color);
 }
 
 #main {
-    background-color: #323232;
+    background-color: var(--primary-bg-color);
     flex-grow: 1;
+    height: auto;
 }
 
 #footer {
-    background-color: #212121;
+    background-color: var(--secondery-bg-color);
+    height: 50px;
+    border-top: 1px solid var(--not-special-color);
+}
+
+.navbar a,
+.navbar p,
+.navbar h2 {
+    color: var(--special-color) !important;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+}
+
+.navbar-toggler {
+    background-color: var(--special-color);
+}
+
+.dropdown-menu {
+    box-sizing: content-box;
+    background-color: var(--secondery-bg-color);
+    width: 250px !important;
+    padding: 10px;
+}
+
+.offcanvas .dropdown-menu {
+    transform: translate(-20px, 40px) !important;
+}
+
+.dropdown-menu li {
     height: 50px;
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-.navbar {
-    display: flex;
-    width: fit-content;
-    justify-content: space-evenly;
-    margin: 0 auto;
-}
-
-.navbar a {
-    display: block;
-    width: 200px;
+.dropdown-item {
+    box-sizing: border-box;
+    background-color: var(--secondery-bg-color);
     text-align: center;
+    line-height: 50px;
+    padding: 0;
+    border: none;
+    transition: all 0.2s ease-out;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-bg-color);
+    border-radius: 4px;
+    transition: all 0.2s ease-in;
+}
+
+.offcanvas {
+    background-color: var(--secondery-bg-color);
+    padding: 20px;
+}
+
+.offcanvas a {
+    color: var(--special-color) !important;
+}
+
+.course-search button:hover {
+    color: var(--primary-bg-color);
+    background-color: var(--special-color);
+    border-color: var(--special-color);
+}
+
+.course-search button {
+    color: var(--special-color);
+    border-color: var(--special-color);
+    background-color: var(--primary-bg-color);
 }

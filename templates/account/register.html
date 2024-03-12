@@ -35,14 +35,16 @@
 {% endblock styles %}
 
 {% block content %}
-<div class="content">
-    <form action="" method="POST">
-        {% csrf_token %}
-        <input name="email" type="text" placeholder="Почта">
-        <input name="username" type="text" placeholder="Имя пользователя">
-        <input name="password" type="password" placeholder="Пароль">
-        <input name="password2" type="password" placeholder="Повтор пароля">
-        <button type="submit">Зарегистрироваться</button>
-    </form>
+<div class="container">
+    <div class="content">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input name="email" type="text" placeholder="Почта">
+            <input name="username" type="text" placeholder="Имя пользователя">
+            <input name="password" type="password" placeholder="Пароль">
+            <input name="password2" type="password" placeholder="Повтор пароля">
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
 </div>
 {% endblock content %}
